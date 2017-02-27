@@ -11,15 +11,22 @@ class		motherboard{
  public:
   	void 			refresh();
   	void 			fill_avg();
-  	void 			fill_value();
   	void 			fill__avg();
-  	virtual bool		check_avg() = 0;
+  	void 			setDays(int);
+  	void 			setAction(int);
+  	void 			setCurrent_Days();
+  	void 			choice();
+  	int 			getCurrent_Days();
+  	virtual bool		check_avg();
+  	motherboard(int, int);
+  	~motherboard(){};
  protected:
-  	std::list<int>		value;
+  	std::list<int>		action;
   	std::list<int>		avg;
   	std::list<int>		_avg;
-  	int 			day;
-
+  	int 			days;
+  	int 			current_days;
+  	int 			dollars;
 };
 
 #endif //TRADE_MOTHERBOARD_H
