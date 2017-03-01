@@ -5,6 +5,7 @@
 #ifndef TRADE_MOTHERBOARD_H
 #define TRADE_MOTHERBOARD_H
 
+#include <iostream>
 #include <list>
 #include "compute.h"
 
@@ -19,6 +20,10 @@ class		motherboard{
   	void 			choice();
   	void 			sell();
   	void 			buy();
+  	std::list<int>		getAvg();
+  	int 			getCurrentAction();
+  	int 			getCurrentAvg();
+  	std::list<int>		getAction();
   	int 			getDollars();
   	int 			getCurrent_Days();
   	virtual bool		check_avg();

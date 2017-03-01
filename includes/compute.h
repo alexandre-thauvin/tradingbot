@@ -11,8 +11,7 @@ class 		compute{
  public:
   compute(){};
   ~compute(){};
-  int		perc_avg();
-  int 		perc__avg();
+  bool		up_act_with_avg(int);
   bool 		variance();
 
  private:

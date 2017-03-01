@@ -2,7 +2,6 @@
 // Created by thauvi_a on 2/27/17.
 //
 
-#include <iostream>
 #include "motherboard.h"
 
 void motherboard::refresh(){
@@ -14,7 +13,7 @@ void motherboard::refresh(){
 void motherboard::fill_avg() {
   int	i;
   int	avg = 0;
-  int	u = this->current_days - 5;
+  int	u = this->current_days - 6;
   std::list<int>::const_iterator	it = this->action.begin();
   for (i = 0 ; i < this->current_days - 1 ; i++)
     it++;
@@ -84,7 +83,7 @@ void motherboard::choice() {
   while (i < this->current_days - 1)
     it++;
   std::cout << "[" << *it << "] -> ";
-  if (this->current_days < 5)
+  if (this->current_days < 16)
   {
     std::cout << "wait" << std::endl;
     return ;
@@ -108,4 +107,26 @@ void motherboard::buy() {
 int motherboard::getDollars() {
   return (this->dollars);
 
+}
+
+std::list<int> motherboard::getAvg() {
+  return this->avg;
+}
+
+int motherboard::getCurrentAction() {
+  std::list<int>::const_iterator	it = this->action.begin();
+  for (int i = 0 ; i < this->current_days - 1 ; i++)
+    it++;
+  return *it;
+}
+
+int motherboard::getCurrentAvg() {
+  std::list<int>::const_iterator	it = this->avg.begin();
+  for(int u = 0 ; u < this->current_days - 6 ; u++)
+    it++;
+  return *it;
+}
+
+std::list<int> motherboard::getAction() {
+  return this->action;
 }

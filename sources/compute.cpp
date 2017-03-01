@@ -8,10 +8,25 @@ bool compute::variance() {
   return false;
 }
 
-int compute::perc__avg() {
-  return 0;
-}
+bool compute::up_act_with_avg(int i) {
+  float	value;
+  std::list<int>::const_iterator	it = this->mit->getAction().begin();
 
-int compute::perc_avg() {
-  return 0;
+  for(int u = 0 ; u < i ; u++)
+    it++;
+  value = (float)(*it * 1.25);
+  for(int u = 0 ; u < 15 ; u++)
+    it--;
+  if (value / 100 >= 1.25)
+    return true;
+  else{
+    it = this->mit->getAvg().begin();
+    for(int u = 0 ; u < i - 6 ; u++)
+      it++;
+    value = (float)(*it * 1.10);
+    it--;
+    if (value / 100 >= 1.10)
+      return true;
+  }
+  return false;
 }
