@@ -29,12 +29,11 @@ void motherboard::fill_avg() {
 void motherboard::fill__avg() {
   static int	i = 1;
   int	avg = 0;
-  int	u;
   std::list<int>::const_iterator	it = this->avg.begin();
   for(int u = 0 ; u < i ; u++)
-    *it++;
+    it++;
   avg = avg + *it;
-  it++;
+  it--;
   avg = avg + *it;
   this->_avg.push_back(avg / 2);
   i++;
@@ -59,6 +58,16 @@ int motherboard::getCurrent_Days() {
 }
 
 bool motherboard::check_avg() {
+  static int 	i = 0;
+  std::list<int>::const_iterator	it = this->_avg.begin();
+  std::list<int>::const_iterator	ite = this->action.begin();
+  for(int u = 0 ; u < this->current_days - 1 ; u++)
+    ite++;
+  for(int u = 0 ; u < i ; u++)
+    it++;
+  if (*it > *ite)
+    return true; // _avg > action
+  i++;
   return false;
 }
 
@@ -69,6 +78,9 @@ void motherboard::setCurrent_Days() {
 void motherboard::choice() {
   int	i = 0;
   std::list<int>::const_iterator	it = this->action.begin();
+  compute	calc();
+
+  this->refresh();
   while (i < this->current_days - 1)
     it++;
   std::cout << "[" << *it << "] -> ";
@@ -78,6 +90,22 @@ void motherboard::choice() {
     return ;
   }
   else {
-
+    if (this->check_avg())
+      sell();
+    else
+      buy();
   }
+}
+
+void motherboard::sell() {
+
+}
+
+void motherboard::buy() {
+
+}
+
+int motherboard::getDollars() {
+  return (this->dollars);
+
 }

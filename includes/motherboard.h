@@ -6,6 +6,7 @@
 #define TRADE_MOTHERBOARD_H
 
 #include <list>
+#include "compute.h"
 
 class		motherboard{
  public:
@@ -16,11 +17,15 @@ class		motherboard{
   	void 			setAction(int);
   	void 			setCurrent_Days();
   	void 			choice();
+  	void 			sell();
+  	void 			buy();
+  	int 			getDollars();
   	int 			getCurrent_Days();
   	virtual bool		check_avg();
   	motherboard(int, int);
   	~motherboard(){};
  protected:
+  	motherboard();
   	std::list<int>		action;
   	std::list<int>		avg;
   	std::list<int>		_avg;
