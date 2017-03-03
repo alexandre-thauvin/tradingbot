@@ -7,7 +7,7 @@
 
 #include <iostream>
 #include <list>
-#include "compute.h"
+//#include "compute.h"
 
 class		motherboard{
  public:
@@ -30,7 +30,7 @@ class		motherboard{
   	motherboard(int, int);
   	~motherboard(){};
  protected:
-  	motherboard();
+  	motherboard() {};
   	std::list<int>		action;
   	std::list<int>		avg;
   	std::list<int>		_avg;

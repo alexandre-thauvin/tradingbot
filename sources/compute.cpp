@@ -6,6 +6,20 @@
 
 bool compute::variance() {
   // V = 1/ N (effectif total) [n1x1 + n2x2 ...] - (moyenne)2
+  unsigned long   var;
+  unsigned long   var2 = 0;
+  unsigned long   avg;
+  int             i;
+
+  std::list<int>::const_iterator    it = this->mit->getAction().begin();
+  for (i = 1 ; i < this->mit->getCurrent_Days() ; i++)
+  {
+    var2 += *it;
+    it++;
+  }
+  avg = var2 / i;
+  var = 1 / this->mit->getAction().size();
+  var = (var * var2) - ((avg)^2);
   return false;
 }
 

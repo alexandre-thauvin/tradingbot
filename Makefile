@@ -5,12 +5,14 @@
 ## Login   <thauvi_a@epitech.net>
 ##
 ## Started on  Mon Feb 27 11:44:29 2017 Alexandre Thauvin
-## Last update Mon Feb 27 11:44:32 2017 Alexandre Thauvin
+## Last update Fri Mar  3 14:26:31 2017 Alexandre Thauvin
 ##
 
 NAME		= trade
 
-SRC		=
+SRC		= sources/compute.cpp \
+		  sources/motherboard.cpp \
+		  sources/main.cpp
 
 OBJ		= $(SRC:.cpp=.o)
 
@@ -22,7 +24,7 @@ CXXFLAGS	= -Wall -Werror -W -Wextra
 
 
 binaire: $(OBJ)
-	$(GCC) -o $(NAME) $(CFLAGS) $(SRC)
+	$(GCC) -o $(NAME) -I ./includes $(CFLAGS) $(SRC)
 
 all:lib
 

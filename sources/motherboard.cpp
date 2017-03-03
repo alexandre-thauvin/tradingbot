@@ -3,6 +3,7 @@
 //
 
 #include "motherboard.h"
+#include "compute.h"
 
 void motherboard::refresh(){
   fill_avg();
