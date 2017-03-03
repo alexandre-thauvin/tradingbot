@@ -5,6 +5,7 @@
 #include <compute.h>
 
 bool compute::variance() {
+  // V = 1/ N (effectif total) [n1x1 + n2x2 ...] - (moyenne)2
   return false;
 }
 
