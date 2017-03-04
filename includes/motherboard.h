@@ -36,7 +36,7 @@ class		motherboard{
   	std::list<int>		_avg;
   	int 			days;
   	int 			current_days;
-  	int 			dollars;
+  	unsigned long 			dollars;
 };
 
 #endif //TRADE_MOTHERBOARD_H
