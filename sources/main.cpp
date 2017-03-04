@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include <istream>
+#include <string>
 #include "motherboard.h"
 
 int 	main()
