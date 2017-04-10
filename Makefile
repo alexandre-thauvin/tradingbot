@@ -16,7 +16,7 @@ SRCS		= sources/compute.cpp \
 
 OBJS		= $(SRCS:.cpp=.o)
 
-GCC		= g++
+GXX		= g++
 
 RM		= rm -rf
 
@@ -24,7 +24,7 @@ CXXFLAGS	= -Wall -Werror -W -Wextra -I ./includes
 
 
 $(NAME): $(OBJS)
-	$(GCC) $(OBJS) -o $(NAME) $(CXXFLAGS)
+	$(GXX) $(OBJS) -o $(NAME) $(CXXFLAGS)
 
 all: $(NAME)
 

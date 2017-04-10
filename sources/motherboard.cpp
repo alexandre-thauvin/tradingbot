@@ -105,7 +105,7 @@ void motherboard::buy() {
 
 }
 
-int motherboard::getDollars() {
+unsigned long motherboard::getDollars() {
   return (this->dollars);
 
 }

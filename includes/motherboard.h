@@ -24,7 +24,7 @@ class		motherboard{
   	int 			getCurrentAction();
   	int 			getCurrentAvg();
   	std::list<int>		getAction();
-  	int 			getDollars();
+  	unsigned long 			getDollars();
   	int 			getCurrent_Days();
   	virtual bool		check_avg();
   	motherboard(int, int);
