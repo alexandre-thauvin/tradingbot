@@ -15,10 +15,11 @@ int 	main()
 
   std::cin >> dollars;
   std::cin >> nb_days;
+  //std::cout << "ici" << std::endl;
 
   motherboard	tr(dollars, nb_days);
   std::cin >> action;
-  while (action != "--end--" && tr.getCurrent_Days() < nb_days){
+  while ((action != "--end--" || action != "--END--") && tr.getCurrent_Days() < nb_days){
 	tr.setAction(stoi(action));
     	tr.choice();
     	tr.setCurrent_Days();

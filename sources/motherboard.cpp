@@ -61,10 +61,14 @@ bool motherboard::check_avg() {
   static int 	i = 0;
   std::list<int>::const_iterator	it = this->_avg.begin();
   std::list<int>::const_iterator	ite = this->action.begin();
-  for(int u = 0 ; u < this->current_days - 1 ; u++)
+  for(int u = 0 ; u < this->current_days - 1 ; u++) {
     ite++;
-  for(int u = 0 ; u < i ; u++)
+    //std::cout << "boucle 4" << std::endl;
+  }
+  for(int u = 0 ; u < i ; u++) {
     it++;
+    //std::cout << "boucle 5" << std::endl;
+  }
   if (*it > *ite)
     return true; // _avg > action
   i++;
@@ -76,13 +80,13 @@ void motherboard::setCurrent_Days() {
 }
 
 void motherboard::choice() {
-  int	i = 0;
   std::list<int>::const_iterator	it = this->action.begin();
   compute	calc();
 
   this->refresh();
-  while (i < this->current_days - 1)
+  for (int i = 0; i < this->current_days - 1; i++) {
     it++;
+  }
   std::cout << "[" << *it << "] -> ";
   if (this->current_days < 16)
   {
