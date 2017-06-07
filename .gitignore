@@ -58,6 +58,7 @@ CMakeLists.txt
 cmake-build-debug/
 Supprimerait main.c
 
+error.file
 trade
 cmake-build-debug/
 CMakeFiles/

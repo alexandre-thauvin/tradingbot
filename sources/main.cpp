@@ -9,7 +9,7 @@
 
 int 	main()
 {
-  int dollars;
+  unsigned long dollars;
   int nb_days;
   std::string	action;
 

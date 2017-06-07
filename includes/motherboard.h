@@ -19,14 +19,13 @@ class		motherboard{
   	void 			buy();
   	int 			getCurrent_Days();
   	int 			getTotal_Days();
-  	virtual bool		check_avg();
   	void			sell_all();
-  	motherboard(int, int);
+  	motherboard(unsigned long, int);
   	~motherboard(){};
  protected:
   	motherboard() {};
   	std::list<int>		action;
-  	std::list<int>		avg; //Moyenne
+  	unsigned int		avg;//Moyenne
   	int 			days;
   	int 			current_days;
   	unsigned long 			dollars;
