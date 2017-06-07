@@ -24,16 +24,18 @@ class		motherboard{
   	int 			getCurrentAction();
   	int 			getCurrentAvg();
   	std::list<int>		getAction();
-  	unsigned long 			getDollars();
+  	unsigned long 		getDollars();
   	int 			getCurrent_Days();
+  	int 			getTotal_Days();
   	virtual bool		check_avg();
+  	void			sell_all();
   	motherboard(int, int);
   	~motherboard(){};
  protected:
   	motherboard() {};
   	std::list<int>		action;
-  	std::list<int>		avg;
-  	std::list<int>		_avg;
+  	std::list<int>		avg; //Moyenne
+  	std::list<int>		_avg; // moyenne Moyenne
   	int 			days;
   	int 			current_days;
   	unsigned long 			dollars;

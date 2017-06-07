@@ -75,6 +75,12 @@ bool motherboard::check_avg() {
   return false;
 }
 
+void motherboard::sell_all()
+{
+  this->dollars -= dollars;
+  std::cout << "sell " << dollars << std::endl;
+}
+
 void motherboard::setCurrent_Days() {
   this->current_days++;
 }
@@ -87,13 +93,13 @@ void motherboard::choice() {
   for (int i = 0; i < this->current_days - 1; i++) {
     it++;
   }
-  std::cout << "[" << *it << "] -> ";
   if (this->current_days < 16)
   {
     std::cout << "wait" << std::endl;
     return ;
   }
-  else {
+  else
+  {
     if (this->check_avg())
       sell();
     else
@@ -101,12 +107,31 @@ void motherboard::choice() {
   }
 }
 
-void motherboard::sell() {
-
+int motherboard::getTotal_Days()
+{
+  return (days);
 }
 
-void motherboard::buy() {
+void motherboard::sell()
+{
+  if (this->dollars - (0.15 * 100 * this->dollars) <= this->avg.back())
+  {
+    this->dollars -= (current_days + (0.0015 * current_days));
+    std::cout << "sell " << current_days << std::endl;
+  }
+  else
+    std::cout << "wait" << std::endl;
+}
 
+void motherboard::buy()
+{
+  if (this->dollars - (0.15 * 100 * this->dollars) >= this->avg.back())
+  {
+    this->dollars += (current_days + (0.0015 * current_days));
+    std::cout << "buy " << current_days << std::endl;
+  }
+  else
+    std::cout << "wait" << std::endl;
 }
 
 unsigned long motherboard::getDollars() {

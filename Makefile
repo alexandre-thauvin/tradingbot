@@ -5,7 +5,7 @@
 ## Login   <thauvi_a@epitech.net>
 ##
 ## Started on  Mon Feb 27 11:44:29 2017 Alexandre Thauvin
-## Last update Fri Mar  3 15:02:48 2017 Alexandre Thauvin
+## Last update Thu May  4 15:04:41 2017 counil_m
 ##
 
 NAME		= trade
@@ -20,7 +20,7 @@ GXX		= g++
 
 RM		= rm -rf
 
-CXXFLAGS	= -Wall -Werror -W -Wextra -I ./includes
+CXXFLAGS	= -Wall -Werror -W -Wextra -I ./includes -std=c++11
 
 
 $(NAME): $(OBJS)

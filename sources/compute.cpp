@@ -29,12 +29,10 @@ bool compute::up_act_with_avg(int i) {
 
   for(int u = 0 ; u < i ; u++) {
     it++;
-    //std::cout << "boucle 1" << std::endl;
   }
   value = (float)(*it * 1.25);
   for(int u = 0 ; u < 15 ; u++) {
     it--;
-    //std::cout << "boucle 2" << std::endl;
   }
   if (value / 100 >= 1.25)
     return true;
@@ -42,7 +40,6 @@ bool compute::up_act_with_avg(int i) {
     it = this->mit->getAvg().begin();
     for(int u = 0 ; u < i - 6 ; u++) {
       it++;
-     // std::cout << "boucle 3" << std::endl;
     }
     value = (float)(*it * 1.10);
     it--;
