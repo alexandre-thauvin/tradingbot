@@ -5,13 +5,12 @@
 ## Login   <thauvi_a@epitech.net>
 ##
 ## Started on  Mon Feb 27 11:44:29 2017 Alexandre Thauvin
-## Last update Wed Jun  7 13:39:36 2017 counil_m
+## Last update Wed Jun  7 23:31:31 2017 counil_m
 ##
 
 NAME		= trade
 
-SRCS		= sources/motherboard.cpp \
-		  sources/main.cpp
+SRCS		=  sources/main.cpp
 
 OBJS		= $(SRCS:.cpp=.o)
 
